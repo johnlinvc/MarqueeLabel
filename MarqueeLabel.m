@@ -162,7 +162,10 @@ NSString *const kMarqueeLabelShouldAnimateNotification = @"MarqueeLabelShouldAni
 }
 
 #pragma mark - Initialization and Label Config
-
+- (void)awakeFromNib{
+    [self setupLabel];
+    self.lengthOfScroll = self.lengthOfScroll == 0 ? self.lengthOfScroll :7.0;
+}
 - (id)initWithFrame:(CGRect)frame {
     return [self initWithFrame:frame duration:7.0 andFadeLength:0.0];
 }
